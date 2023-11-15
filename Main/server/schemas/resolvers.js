@@ -1,29 +1,79 @@
-// const { Tech, Matchup } = require('../models');
+const { Product, User } = require('../models');
+const { signToken, AuthenticationError } = require('../utils/auth');
 
-// const resolvers = {
-//   Query: {
-//     tech: async () => {
-//       return Tech.find({});
-//     },
-//     matchups: async (parent, { _id }) => {
-//       const params = _id ? { _id } : {};
-//       return Matchup.find(params);
-//     },
-//   },
-//   Mutation: {
-//     createMatchup: async (parent, args) => {
-//       const matchup = await Matchup.create(args);
-//       return matchup;
-//     },
-//     createVote: async (parent, { _id, techNum }) => {
-//       const vote = await Matchup.findOneAndUpdate(
-//         { _id },
-//         { $inc: { [`tech${techNum}_votes`]: 1 } },
-//         { new: true }
-//       );
-//       return vote;
-//     },
-//   },
-// };
 
-// module.exports = resolvers;
+const resolvers = {
+  Query: {
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+
+        return userData;
+      }
+
+      throw AuthenticationError;
+    },
+  },
+    Query: {
+      products: async () => {
+        return await Product.find({})
+      },
+      users: async () => {
+        return await User.find({})
+      },
+    },
+
+  Mutation: {
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
+
+      return { token, user };
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw AuthenticationError;
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw AuthenticationError;
+      }
+
+      const token = signToken(user);
+      return { token, user };
+    },
+    addProduct: async (parent, { productData }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { productData } },
+          { new: true }
+        );
+
+        return updatedUser;
+      }
+
+      throw AuthenticationError;
+    },
+    removeProduct: async (parent, { productId }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { productId } },
+          { new: true }
+        );
+
+        return updatedUser;
+      }
+
+      throw AuthenticationError;
+    },
+  },
+};
+
+module.exports = resolvers;
+
