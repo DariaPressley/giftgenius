@@ -4,7 +4,7 @@ const typeDefs = `
     title: String!
     description: String!
     condition: String!
-    cateogry: String!
+    cateogory: String!
     ownerEmail: String!
     price: Int
   }

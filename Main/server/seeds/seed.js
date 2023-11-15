@@ -1,14 +1,15 @@
 const bcrypt = require('bcryptjs');
 const mongoose = require('./DB');
-const User = require('../models/User'); // Adjust path as necessary
-const Product = require('../models/Product'); // Adjust path as necessary
-const seedData = require('./Data.json');
+const User = require('../models/User');
+const Product = require('../models/Product');
+const userSeedData = require('./user.json').user;
+const productSeedData = require('./products.json').product;
 
 async function seedDB() {
   await mongoose.connection.dropDatabase();
 
   // Seed Users with hashed passwords
-  for (const userData of seedData.users) {
+  for (const userData of userSeedData) {
     const hashedPassword = await bcrypt.hash(userData.password, 12);
     const user = new User({
       ...userData,
@@ -18,7 +19,7 @@ async function seedDB() {
   }
 
   // Seed Products
-  for (const productData of seedData.product) {
+  for (const productData of productSeedData) {
     const owner = await User.findOne({ email: productData.ownerEmail });
     if (owner) {
       const product = new Product({ ...productData, owner: owner._id });
