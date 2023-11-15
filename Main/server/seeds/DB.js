@@ -1,8 +1,12 @@
-// const models = require('../models');
-// const db = require('../config/connection');
+const models = require('../models');
+const db = require('../config/connection');
 
-// module.exports = async (params) => {
-//   try {
-   
-//   }
-// }
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/GiftGenius', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
+
+module.exports = mongoose;

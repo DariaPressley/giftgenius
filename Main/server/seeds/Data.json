@@ -1,3 +1,49 @@
-[
+{
+    "users": [
+      {
+        "name": "Alice Smith",
+        "email": "alice@example.com",
+        "password": "hashed_password"
+      },
+
+      {
+        "name": "Sally Jones",
+        "email": "sally@example.com",
+        "password": "secure_password"
+      },
+
+      {
+        "name": "David Winter",
+        "email": "david@example.com",
+        "password": "123_password"
+      }
+
+    ],
+    "product": [
+      {
+        "title": "LED Christmas Lights",
+        "description": "A string of LED lights, barely used.",
+        "condition": "like new",
+        "category": "home decor",
+        "ownerEmail": "alice@example.com"
+      },
+
+      {
+        "title": "Ugly Christmas Sweater",
+        "description": "A warm and cozy but ugly sweater.",
+        "condition": "brand new",
+        "category": "clothing",
+        "ownerEmail": "sally@example.com"
+      },
+
+      {
+        "title": "Coffee Mug",
+        "description": "A large coffee mug.",
+        "condition": "brand new",
+        "category": "ceramics",
+        "ownerEmail": "david@example.com"
+      }
+    
+    ]
+  }
   
-]
