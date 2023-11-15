@@ -1,16 +1,19 @@
 const typeDefs = `
   type Product {
     _id: ID!
-    name: String!
+    title: String!
+    description: String!
+    condition: String!
+    cateogry: String!
+    ownerEmail: String!
     price: Int
-    occassion: String!
   }
 
   type User {
     _id: ID!
-    first_name: String!
-    last_name: String!
     username: String!
+    email: String!
+    password: String!
   }
 
   type Query {
