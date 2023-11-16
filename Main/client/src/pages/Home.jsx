@@ -10,9 +10,6 @@ const Home = () => {
   const productDisplay = data?.product || [];
 
   
-
-
-
   return (
     <div>
       <div>

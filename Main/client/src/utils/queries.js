@@ -1,7 +1,6 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_USER= gql`
-
     query User {
     users {
       _id
@@ -9,12 +8,10 @@ export const QUERY_USER= gql`
       password
       username
     }
-  }
-  
+  } 
 `;
 
 export const QUERY_PRODUCT = gql`
-
     query Product {
     products {
       _id
@@ -26,5 +23,4 @@ export const QUERY_PRODUCT = gql`
       title
     }
   }
-  
-// `;
+`;
