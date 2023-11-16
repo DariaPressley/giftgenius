@@ -4,7 +4,7 @@ const typeDefs = `
     title: String!
     description: String!
     condition: String!
-    cateogory: String!
+    category: String!  
     ownerEmail: String!
     price: Int
   }
@@ -17,11 +17,21 @@ const typeDefs = `
   }
 
   type Query {
-    product: [Product]
+    products: [Product] 
+    users: [User]        
+    me: User             
   }
 
-  Mutation {
-    addProduct(name: String!, price: Int,occasion:String!)
+  type Mutation {
+    addProduct(name: String!, price: Int, occasion: String!): Product 
+    addUser(username: String!, email: String!, password: String!): User
+    login(email: String!, password: String!): AuthPayload
+    removeProduct(productId: ID!): User
+  }
+  
+  type AuthPayload {
+    token: String
+    user: User
   }
 `;
 
