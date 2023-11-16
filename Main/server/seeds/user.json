@@ -1,19 +1,19 @@
 {
 "user": [
     {
-      "name": "Alice Smith",
+      "username": "Alice Smith",
       "email": "alice@example.com",
       "password": "hashed_password"
     },
 
     {
-      "name": "Sally Jones",
+      "username": "Sally Jones",
       "email": "sally@example.com",
       "password": "secure_password"
     },
 
     {
-      "name": "David Winter",
+      "username": "David Winter",
       "email": "david@example.com",
       "password": "123_password"
     }

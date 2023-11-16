@@ -13,10 +13,8 @@ const resolvers = {
 
       throw AuthenticationError;
     },
-  },
-    Query: {
       products: async () => {
-        return await Product.find({})
+        return Product.find({})
       },
       users: async () => {
         return await User.find({})
