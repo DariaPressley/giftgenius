@@ -9,6 +9,10 @@ const Home = () => {
 
   const productDisplay = data?.product || [];
 
+  
+
+
+
   return (
     <div>
       <div>
@@ -18,13 +22,14 @@ const Home = () => {
       </div>
       <div>
         <h2> Regift that gift! </h2>
-       {/* {productDisplay} */}
+       {productDisplay}
       </div>
       <div>
-        <h2>Ready to create a new matchup?</h2>
         <Link to="/signup">
-          <button className="btn btn-lg btn-danger">Login!</button>
           <button className="btn btn-lg btn-danger">Create Account!</button>
+        </Link>
+        <Link to="/login">
+          <button className="btn btn-lg btn-danger">Login!</button>
         </Link>
       </div>
     </div>

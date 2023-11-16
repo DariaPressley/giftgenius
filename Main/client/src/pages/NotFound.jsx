@@ -1,16 +1,12 @@
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-// function NotFound() {
-//   let location = useLocation();
-//   return (
-//     <div className="card bg-white card-rounded w-50">
-//       <div className="card-header bg-dark text-center">
-//         <h1>
-//           No match for <code>{location.pathname}</code>
-//         </h1>
-//       </div>
-//     </div>
-//   );
-// }
+function NotFound() {
+  let location = useLocation();
+  return (
+        <h1>
+          Sorry, this page does not exist!
+        </h1>
+  );
+}
 
-// export default NotFound;
+export default NotFound;
