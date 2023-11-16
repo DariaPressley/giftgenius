@@ -3,7 +3,7 @@ const mongoose = require('./DB');
 const User = require('../models/User');
 const Product = require('../models/Product');
 const userSeedData = require('./user.json').user;
-const productSeedData = require('./products.json').product;
+const productSeedData = require('./product.json').product;
 
 async function seedDB() {
   await mongoose.connection.dropDatabase();
