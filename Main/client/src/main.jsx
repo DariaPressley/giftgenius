@@ -3,11 +3,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Sell from './pages/Sell';
-import Buy from './pages/Buy';
-import Checkout from './pages/Checkout';
+// import Login from './pages/Login';
+// import Signup from './pages/Signup';
+// import Sell from './pages/Sell';
+// import Buy from './pages/Buy';
+// import Checkout from './pages/Checkout';
 import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter([
@@ -20,26 +20,26 @@ const router = createBrowserRouter([
                 index: true,
                 element: <Home />
             },
-            {
-                path: '/login',
-                element: <Login />
-            },
-            {
-                path: '/signup',
-                element: <Signup />
-            },
-            {
-                path: '/sell',
-                element: <Sell/>
-            },
-            {
-                path: '/buy',
-                element: <Buy />
-            },
-            {
-                path: '/checkout',
-                element: <Checkout />
-            },
+            // {
+            //     path: '/login',
+            //     element: <Login />
+            // },
+            // {
+            //     path: '/signup',
+            //     element: <Signup />
+            // },
+            // {
+            //     path: '/sell',
+            //     element: <Sell/>
+            // },
+            // {
+            //     path: '/buy',
+            //     element: <Buy />
+            // },
+            // {
+            //     path: '/checkout',
+            //     element: <Checkout />
+            // },
         ],
     },
 ]);
