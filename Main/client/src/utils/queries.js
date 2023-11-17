@@ -12,15 +12,14 @@ export const QUERY_USER= gql`
 `;
 
 export const QUERY_PRODUCT = gql`
-    query Product {
-    products {
-      _id
-      category
-      condition
-      description
-      ownerEmail
-      price
-      title
-    }
+  query Query {
+  products {
+    _id
+    title
+    description
+    condition
+    category
+    ownerEmail
   }
+}
 `;
