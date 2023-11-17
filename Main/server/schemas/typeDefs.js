@@ -7,6 +7,7 @@ const typeDefs = `
     category: String!  
     ownerEmail: String!
     price: Int
+    image: String!
   }
 
   type User {
