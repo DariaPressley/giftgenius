@@ -20,6 +20,7 @@ export const QUERY_PRODUCT = gql`
     condition
     category
     ownerEmail
+    image
   }
 }
 `;

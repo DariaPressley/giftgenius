@@ -1,7 +1,7 @@
-* {
-    background-color: rgb(158, 196, 158);
+*{
+    background-image: url();
+    background-color: black;
+    color: white;
+    font-size: large;
 }
 
-h1 {
-    align-text: center;
-} 
