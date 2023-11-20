@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SellPage = () => {
+const ListGift = () => {
   const [itemName, setItemName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
@@ -34,10 +34,10 @@ const SellPage = () => {
 
   return (
     <div>
-      <h2>Sell an Item</h2>
+      <h2>List your Gift</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Item Name:
+          Gift Name:
           <input type="text" value={itemName} onChange={handleItemNameChange} />
         </label>
         <br />
@@ -62,4 +62,4 @@ const SellPage = () => {
   );
 };
 
-export default SellPage;
+export default ListGift;
