@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ListGift.css'; 
 
 const ListGift = () => {
   const [itemName, setItemName] = useState('');
@@ -33,29 +34,25 @@ const ListGift = () => {
   };
 
   return (
-    <div>
-      <h2>List your Gift</h2>
+    <div className="container">
+      <h2>List Your Gift</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Gift Name:
           <input type="text" value={itemName} onChange={handleItemNameChange} />
         </label>
-        <br />
         <label>
           Description:
           <textarea value={description} onChange={handleDescriptionChange} />
         </label>
-        <br />
         <label>
           Price:
           <input type="text" value={price} onChange={handlePriceChange} />
         </label>
-        <br />
         <label>
           Upload Image:
           <input type="file" accept="image/*" onChange={handleImageChange} />
         </label>
-        <br />
         <button type="submit">Submit</button>
       </form>
     </div>
