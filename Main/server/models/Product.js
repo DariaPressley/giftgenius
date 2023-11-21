@@ -26,6 +26,10 @@ const productSchema = new Schema({
         },
         image: {
             type: String,
+        },
+        userId: {
+            type: Schema.Types.ObjectId, 
+            ref: "User"
         }
     });
     

@@ -6,6 +6,7 @@
         "condition": "like new",
         "category": "home decor",
         "ownerEmail": "alice@example.com",
+        "price": 10,
         "image": "https://res.cloudinary.com/dwymtagmc/image/upload/v1700259637/test_lights_lex3kb.jpg"
       },
 
@@ -15,6 +16,7 @@
         "condition": "brand new",
         "category": "clothing",
         "ownerEmail": "sally@example.com",
+        "price": 20,
         "image": "https://res.cloudinary.com/dwymtagmc/image/upload/v1700259851/test_sweater_nswjpl.jpg"
       },
 
@@ -24,6 +26,7 @@
         "condition": "brand new",
         "category": "ceramics",
         "ownerEmail": "david@example.com",
+        "price": 50,
         "image": "https://res.cloudinary.com/dwymtagmc/image/upload/v1700255602/test_mug_mrkzhj.jpg"
       }
     

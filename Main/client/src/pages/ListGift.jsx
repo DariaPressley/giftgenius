@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ListGift.css'; 
 import { useContext } from 'react';
+import { CREATE_PRODUCT } from '../utils/mutations';
 
 const ListGift = () => {
   const [itemName, setItemName] = useState('');
@@ -21,6 +22,7 @@ const ListGift = () => {
   };
 
   const handleImageChange = (e) => {
+    e.preventDefault ();
 
     var myWidget = cloudinary.createUploadWidget({
       cloudName: 'dwymtagmc', 
@@ -39,12 +41,18 @@ const ListGift = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
+    //send new product to database using the mutation - set three items to object and send object to database
+    //upload button is running handle submit and reloading the page 
+
+
     setItemName('');
     setDescription('');
     setPrice('');
     setImage(null);
   };
+
+
 
   return (
     <div className="container">
@@ -66,7 +74,6 @@ const ListGift = () => {
           Upload Image:
           <button id="upload_widget" className="cloudinary-button" onClick= {handleImageChange}>Upload Gift</button>
         </label>
-        <button type="submit">Submit</button>
       </form>
     </div>
   );

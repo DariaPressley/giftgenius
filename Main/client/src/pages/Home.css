@@ -50,4 +50,11 @@ h1 {
     text-decoration: none;
   }
   
-  
+  .buyButton {
+    width: 10rem;
+    height: 2rem;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-bottom: 30px;
+  }
