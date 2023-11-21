@@ -9,7 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 import React from 'react';
 import Header from './pages/Header';
-import axios from 'axios';
+
 
 
 const httpLink = createHttpLink({
