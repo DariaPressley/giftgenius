@@ -1,17 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Logout from './path-to-logout-component';
-import Home from './path-to-home-component';
+import Auth from '../utils/auth';
 
-const App = () => {
+const Logout = () => {
+  // Handle the logout logic
+  const handleLogout = () => {
+    // Clear authentication token
+    Auth.logout();
+  };
+
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/logout" component={Logout} />
-      </Switch>
-    </Router>
+    <div>
+      <h2>Logout Page</h2>
+      <button onClick={handleLogout}>Logout</button>
+    </div>
   );
 };
 
-export default App;
+export default Logout;
+
