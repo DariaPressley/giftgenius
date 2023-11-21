@@ -20,12 +20,25 @@ const ListGift = () => {
   };
 
   const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
+
+    var myWidget = cloudinary.createUploadWidget({
+      cloudName: 'dwymtagmc', 
+      uploadPreset: 'tjj6snc6'}, (error, result) => { 
+        if (!error && result && result.event === "success") { 
+          console.log('Done! Here is the image info: ', result.info); 
+          setImage(result.info.url);
+        }
+      }
+    )
+    
+    document.getElementById("upload_widget").addEventListener("click", function(){
+        myWidget.open();
+      }, false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+//add image mutation with item name, etc  - insert into the database
   
     setItemName('');
     setDescription('');
@@ -51,7 +64,7 @@ const ListGift = () => {
         </label>
         <label>
           Upload Image:
-          <input type="file" accept="image/*" onChange={handleImageChange} />
+          <button id="upload_widget" className="cloudinary-button" onClick= {handleImageChange}>Upload Gift</button>
         </label>
         <button type="submit">Submit</button>
       </form>
