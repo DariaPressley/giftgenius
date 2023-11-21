@@ -9,6 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 import React from 'react';
 import Header from './pages/Header';
+import axios from 'axios';
 
 
 
@@ -36,21 +37,20 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App() {
-  return (
-    <ApolloProvider client={client}>
-      <Header />
-      
-      <div className="flex-column justify-flex-start min-100-vh">
-          <Outlet />
-        </div>
+const App = () => {
 
-        
-    </ApolloProvider>
+  return (
+    <div>
+        <ApolloProvider client={client}>
+       <Header />
+       <div className="flex-column justify-flex-start min-100-vh">
+           <Outlet />
+         </div>
+         {/* Insert footer */}
+     </ApolloProvider>
+    </div>
   );
 }
 
 export default App;
 
-//need context portion 
-// use context on front end

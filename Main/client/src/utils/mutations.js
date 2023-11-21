@@ -47,6 +47,15 @@ export const CREATE_PRODUCT = gql`
       title
       _id
     }
-  }
-  
+  } 
 `;
+
+export const PAYMENT = gql`
+
+mutation Mutation($token: TokenInput, $amount: Int) {
+  makePayment(token: $token, amount: $amount) {
+    success
+    message
+  }
+}
+`; 

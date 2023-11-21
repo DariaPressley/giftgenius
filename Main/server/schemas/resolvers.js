@@ -1,5 +1,7 @@
 const { Product, User } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
+const stripe = require("stripe")("sk_test_51OEbylLFoJobiVodDUoni1AFDxHyab2ZURXeguApjxgxd1AL6twV28Y3uXFCr2nCLCM8uE6tLl4q43mSdVQoIaX400mBTeP9Cd");
+const { v4: uuidv4 } = require('uuid');
 
 
 const resolvers = {
@@ -71,6 +73,39 @@ const resolvers = {
       throw AuthenticationError;
     },
   },
+
+  Query: {
+    getMessage: () => 'It works',
+  },
+  Mutation: {
+    makePayment: async (_, { token, amount }, { req, res }) => {
+      try {
+        console.log(token);
+        const { email, source } = token;
+        const idempotencyKey = uuidv4();
+
+        const customer = await stripe.customers.create({
+          email,
+          source,
+        });
+
+        const charge = await stripe.charges.create(
+          {
+            amount: amount * 100,
+            currency: 'usd',
+            customer: customer.id,
+            receipt_email: email,
+          },
+          { idempotencyKey }
+        );
+
+        return { success: true, message: 'Payment successful' };
+      } catch (error) {
+        console.error(error);
+        return { success: false, message: 'Payment failed' };
+      }
+    },
+  }
 };
 
 module.exports = resolvers;
