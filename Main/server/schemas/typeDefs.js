@@ -24,14 +24,15 @@ const typeDefs = `
   }
 
   type Mutation {
+    addProfile(username: String!, email: String!, password: String!): User
     addProduct(name: String!, price: Int, occasion: String!): Product 
-    addUser(username: String!, email: String!, password: String!): User
-    login(email: String!, password: String!): AuthPayload
+    addUser(username: String!, email: String!, password: String!): AuthPayload
+    loginUser(email: String!, password: String!): AuthPayload
     removeProduct(productId: ID!): User
   }
   
   type AuthPayload {
-    token: String
+    token: ID
     user: User
   }
 

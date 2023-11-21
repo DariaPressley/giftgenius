@@ -21,25 +21,33 @@ const Login = (props) => {
   };
 
   // submit form
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
-    try {
-      const { data } = await login({
-        variables: { ...formState },
-      });
+const handleFormSubmit = async (event) => {
+  event.preventDefault();
+  console.log(formState);
 
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
-    }
-
-    // clear form values
-    setFormState({
-      email: '',
-      password: '',
+  try {
+    const { data } = await login({
+      variables: { ...formState },
     });
-  };
+
+    if (data && data.loginUser && data.loginUser.token) {
+      // Store the token in localStorage
+      localStorage.setItem('token', data.loginUser.token);
+      // Redirect to a protected route or update the UI to reflect the logged-in state
+    } else {
+      console.error("Login failed: token not received");
+      // Optionally, update the UI or state to reflect the error
+    }
+  } catch (e) {
+    console.error(e);
+  }
+
+  // clear form values
+  setFormState({
+    email: '',
+    password: '',
+  });
+};
 
   return (
     <main className="flex-row justify-center mb-4">
