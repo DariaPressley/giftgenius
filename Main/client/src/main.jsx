@@ -3,8 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home';
-// import Login from './pages/Login';
-// import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import ListGift from './pages/ListGift.jsx';
 // import Buy from './pages/Buy';
 // import Checkout from './pages/Checkout';
@@ -20,14 +20,14 @@ const router = createBrowserRouter([
                 index: true,
                 element: <Home />
             },
-            // {
-            //     path: '/login',
-            //     element: <Login />
-            // },
-            // {
-            //     path: '/signup',
-            //     element: <Signup />
-            // },
+            {
+                path: '/Login',
+                element: <Login />
+            },
+            {
+                path: '/signup',
+                element: <Signup />
+            },
             {
                 path: '/ListGift',
                 element: <ListGift/>

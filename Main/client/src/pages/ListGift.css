@@ -1,0 +1,96 @@
+/* Main Container Styles */
+.container {
+  margin-top: 0pc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: transparent; /* Ensures no background color */
+}
+
+/* Form Container Styles */
+form {
+  padding: 4rem;
+  border-radius: 15px; /* Rounded borders for the form */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.7); /* Smooth shadow */
+  width: 100%;
+  max-width: 400px; /* Adjust the width as needed */
+  margin: auto; /* Center the form with automatic horizontal margins */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading Style */
+h2 {
+  color: #f8f8f8; /* Soft white color */
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Label Styles */
+label {
+  color: #f8f8f8; /* Soft white color */
+  width: 100%; /* Full width */
+  margin-bottom: 1rem; /* Increased space between fields */
+  font-size: 1rem;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="file"],
+textarea {
+  width: 100%; /* Full width including padding */
+  margin-bottom: 1rem;
+  padding: 15px;
+  border: 1px solid #555; /* Darker border for less contrast */
+  border-radius: 8px; /* More rounded borders for inputs */
+  background-color: #2a2a2a; /* Dark background for the input */
+  color: #ccc; /* Soft grey color for text */
+  font-size: 1rem;
+}
+
+/* Textarea Styles */
+textarea {
+  height: 120px;
+  resize: vertical; /* Allow only vertical resize */
+}
+
+/* File Input Adjustment */
+input[type="file"] {
+  padding: 0.5rem;
+  border: none;
+  margin-top: 0; /* Resetting margin top for alignment */
+}
+
+/* Button Styles */
+button {
+  width: 100%; /* Full width including padding */
+  padding: 15px 20px;
+  margin-top: 1rem;
+  background-color: #5cb85c; /* Green background */
+  background-image: linear-gradient(to right, #4cae4c, #5cb85c); /* Gradient for depth */
+  color: white;
+  border: none;
+  border-radius: 8px; /* More rounded borders for the button */
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #449d44; /* Darker shade on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lifted shadow effect */
+  transform: translateY(-2px); /* Slight raise */
+}
+
+/* Error Message Styling, if applicable */
+.bg-danger {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 1rem;
+  width: 100%; /* Align with the input fields */
+  text-align: center;
+}

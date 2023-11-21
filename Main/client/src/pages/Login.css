@@ -1,0 +1,82 @@
+/* Main Container Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #004400; /* Adjust the background color to match the screenshot */
+  }
+  
+  /* Card Styles */
+  .card {
+    background-color: #006400; /* Adjust the card background color to match the screenshot */
+    border-radius: 0px; /* Square corners for the card */
+    color: white;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  /* Card Header */
+  .card-header {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #ffffff; /* Make sure the header text is white */
+    padding-bottom: 2rem; /* Add padding to the bottom of the header */
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%; /* Match the form width to your screenshot */
+  }
+  
+  /* Input Styles */
+  .form-input {
+    width: calc(100% - 2rem); /* Full width minus padding */
+    padding: 15px;
+    margin-bottom: 1rem;
+    border-radius: 6px; /* Rounded corners for input fields */
+    border: none; /* No border if that's the style in the screenshot */
+    color: white;
+    font-size: 1rem;
+  }
+  
+  /* Adjust the placeholder color for visibility */
+  .form-input::placeholder {
+    color: #c7c7c7;
+  }
+  
+  /* Button Styles */
+  .btn {
+    width: calc(100% - 2rem); /* Full width minus padding */
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #008000; /* Adjust the button color to match the screenshot */
+    color: white;
+    border: none;
+    border-radius: 6px; /* Match the border-radius to your screenshot */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.1rem;
+  }
+  
+  .btn:hover {
+    background-color: #013220; /* A darker shade for hover state */
+  }
+  
+  /* Error Message Styling */
+  .bg-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  

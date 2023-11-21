@@ -69,6 +69,15 @@ const App = () => {
           />
     </div>
      </div>
+    <ApolloProvider client={client}>
+      <Header />
+      
+      <div className="flex-column justify-flex-start min-100-vh">
+          <Outlet />
+        </div>
+
+        
+    </ApolloProvider>
   );
 }
 

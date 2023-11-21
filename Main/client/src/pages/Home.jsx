@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCT } from '../utils/queries';
 import Products from './Products';
-
+import './Home.css'; 
 
 const Home = () => {
   const { data, loading } = useQuery(QUERY_PRODUCT, {
