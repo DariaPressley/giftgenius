@@ -75,12 +75,7 @@ const resolvers = {
 
       throw AuthenticationError;
     },
-  },
 
-  Query: {
-    getMessage: () => 'It works',
-  },
-  Mutation: {
     makePayment: async (_, { token, amount }, { req, res }) => {
       try {
         console.log(token);
