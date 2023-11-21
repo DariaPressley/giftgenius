@@ -9,7 +9,8 @@ import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 import React from 'react';
 import Header from './pages/Header';
-
+import axios from 'axios';
+import Stripe from "react-stripe-checkout";
 
 
 // Construct our main GraphQL API endpoint
@@ -36,19 +37,40 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App() {
+const App = () => {
+  handleToken = (totalAmount, token) => {
+    try {
+      axios.post ("http://localhost:3000/api/stripe/pay", {
+        token: token.id,
+        amount: totalAmount
+      });
+    } catch (error) {
+      console.log (error);
+    };
+  }
+
+  const tokenHandler = (token) => {
+    handleToken(100, token);
+  }
+
   return (
-    <ApolloProvider client={client}>
-      <Header />
-      <div className="flex-column justify-flex-start min-100-vh">
-          <Outlet />
-        </div>
-        {/* Insert footer */}
-    </ApolloProvider>
+    <div>
+        <ApolloProvider client={client}>
+       <Header />
+       <div className="flex-column justify-flex-start min-100-vh">
+           <Outlet />
+         </div>
+         {/* Insert footer */}
+     </ApolloProvider>
+    <div>
+      <Stripe 
+          stripeKey= "pk_test_51OEbylLFoJobiVodNQ6xsVV6ljsIhM77mdECRhTewSgFgg6vowOeDaNkbeZ57U5AoDzRMcFKtsF7tOAUvbgdW8Aw00lAWII4A2"
+          token= {tokenHandler}
+          />
+    </div>
+     </div>
   );
 }
 
 export default App;
 
-//need context portion 
-// use context on front end
