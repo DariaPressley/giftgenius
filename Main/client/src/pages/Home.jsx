@@ -10,6 +10,7 @@ const Home = () => {
     fetchPolicy: "no-cache"
   });
 
+
   const productDisplay = data?.products || [];
 
   return (
