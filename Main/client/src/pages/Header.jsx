@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 
-
 const Header = () => {
   return (
     <div className="header">
@@ -22,6 +21,10 @@ const Header = () => {
         <BreadcrumbItem>
           <BreadcrumbLink as={Link} to="/signup">Create My Account</BreadcrumbLink>
         </BreadcrumbItem>
+
+        <BreadcrumbItem>
+          <BreadcrumbLink as={Link} to="/logout">logout</BreadcrumbLink>
+        </BreadcrumbItem> 
       </Breadcrumb>
     </div>
   );
