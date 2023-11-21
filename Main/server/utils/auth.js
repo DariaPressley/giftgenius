@@ -1,10 +1,11 @@
 const jwt = require('jsonwebtoken');
-const secret = process.env.JWT_SECRET; // Secret key for JWT, stored in environment variable
+const secret = "Shhhhhh"; // Secret key for JWT, stored in environment variable
 const expiration = '2h'; // Token expiration time
 
 module.exports = {
   // Function to sign token
   signToken: function({ username, email, _id }) {
+    console.log("Im here");
     const payload = { username, email, _id };
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },

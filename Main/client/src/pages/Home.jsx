@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCT } from '../utils/queries';
 import Products from './Products';
 import './Home.css'; 
+import { useContext } from 'react';
 
 const Home = () => {
   const { data, loading } = useQuery(QUERY_PRODUCT, {

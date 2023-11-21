@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { ADD_PROFILE } from '../utils/mutations';
+import { CREATE_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import './Signup.css'; 
 
@@ -11,12 +11,12 @@ const Signup = () => {
     email: '',
     password: '',
   });
-  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+  const [addUser, { error, data }] = useMutation(CREATE_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
+console.log(name, value);
     setFormState({
       ...formState,
       [name]: value,
@@ -29,14 +29,15 @@ const Signup = () => {
     console.log(formState);
 
     try {
-      const { data } = await addProfile({
+      const { data } = await addUser({
         variables: { ...formState },
       });
       // James says to review the line below; addProfile might need to be removed...
       // but also, where is token coming from? It's not in the User type definition.
-      Auth.login(data.token);
+      Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
+      console.log(error);
     }
   };
 
@@ -58,7 +59,7 @@ const Signup = () => {
                   placeholder="Your username"
                   name="username"
                   type="text"
-                  value={formState.usernamename}
+                  value={formState.username}
                   onChange={handleChange}
                 />
                 <input
