@@ -68,7 +68,6 @@ const App = () => {
           token= {tokenHandler}
           />
     </div>
-     </div>
     <ApolloProvider client={client}>
       <Header />
       
@@ -78,6 +77,7 @@ const App = () => {
 
         
     </ApolloProvider>
+    </div>
   );
 }
 
