@@ -35,6 +35,24 @@ const typeDefs = `
     token: ID
     user: User
   }
+
+  type Query {
+    getMessage: String
+  }
+
+  input TokenInput {
+    email: String!
+    source: String!
+  }
+
+  type PaymentResult {
+    success: Boolean
+    message: String
+  }
+
+  type Mutation {
+    makePayment(token: TokenInput, amount: Int): PaymentResult
+  }
 `;
 
 module.exports = typeDefs;

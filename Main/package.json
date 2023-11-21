@@ -24,6 +24,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "apollo-server-express": "^3.13.0",
+    "axios": "^1.6.2",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.41.0",
@@ -37,6 +38,10 @@
     "mongoose": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.19.0"
+    "react-router-dom": "^6.19.0",
+    "react-stripe-checkout": "^2.6.3",
+    "save": "^2.9.0",
+    "stripe": "^14.5.0",
+    "uuid": "^9.0.1"
   }
 }

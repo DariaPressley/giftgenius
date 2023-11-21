@@ -9,6 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 import React from 'react';
 import Header from './pages/Header';
+import axios from 'axios';
 
 
 const httpLink = createHttpLink({
@@ -33,8 +34,10 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App() {
+const App = () => {
+
   return (
+
     <ApolloProvider client={client}>
         <Header />
         <div className="flex-column justify-flex-start min-100-vh">
