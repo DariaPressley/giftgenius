@@ -39,12 +39,14 @@ const ListGift = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     setItemName('');
     setDescription('');
     setPrice('');
     setImage(null);
   };
+
+
 
   return (
     <div className="container">
@@ -66,7 +68,6 @@ const ListGift = () => {
           Upload Image:
           <button id="upload_widget" className="cloudinary-button" onClick= {handleImageChange}>Upload Gift</button>
         </label>
-        <button type="submit">Submit</button>
       </form>
     </div>
   );

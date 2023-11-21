@@ -21,6 +21,7 @@ export const QUERY_PRODUCT = gql`
     category
     ownerEmail
     image
+    price
   }
 }
 `;
