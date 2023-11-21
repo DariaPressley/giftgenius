@@ -20,7 +20,7 @@ const typeDefs = `
   type Query {
     products: [Product] 
     users: [User]        
-    me: User             
+    me: User           
   }
 
   type Mutation {
@@ -28,15 +28,12 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): User
     login(email: String!, password: String!): AuthPayload
     removeProduct(productId: ID!): User
+    makePayment(token: TokenInput, amount: Int): PaymentResult
   }
   
   type AuthPayload {
     token: String
     user: User
-  }
-
-  type Query {
-    getMessage: String
   }
 
   input TokenInput {
@@ -49,9 +46,6 @@ const typeDefs = `
     message: String
   }
 
-  type Mutation {
-    makePayment(token: TokenInput, amount: Int): PaymentResult
-  }
 `;
 
 module.exports = typeDefs;
