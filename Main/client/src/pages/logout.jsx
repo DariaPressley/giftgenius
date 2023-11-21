@@ -2,9 +2,7 @@ import React from 'react';
 import Auth from '../utils/auth';
 
 const Logout = () => {
-  // Handle the logout logic
   const handleLogout = () => {
-    // Clear authentication token
     Auth.logout();
   };
 

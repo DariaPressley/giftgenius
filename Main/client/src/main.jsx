@@ -5,6 +5,7 @@ import App from './App.jsx';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Logout from './pages/logout.jsx';
 import ListGift from './pages/ListGift.jsx';
 // import Buy from './pages/Buy';
 import Checkout from './pages/Checkout';
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: '/ListGift',
                 element: <ListGift/>
+            },
+            {
+                path: '/logout',
+                element: <Logout/>
             },
             // {
             //     path: '/buy',
