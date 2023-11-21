@@ -1,0 +1,5 @@
+$ curl https://api.stripe.com/v1/sources \
+  -u sk_test_51OEbylLFoJobiVodDUoni1AFDxHyab2ZURXeguApjxgxd1AL6twV28Y3uXFCr2nCLCM8uE6tLl4q43mSdVQoIaX400mBTeP9Cd: \
+  -d type=ach_credit_transfer \
+  -d currency=usd \
+  -d "owner[email]"="daria.mik@gmail.com"

@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ListGift from './pages/ListGift.jsx';
 // import Buy from './pages/Buy';
-// import Checkout from './pages/Checkout';
+import Checkout from './pages/Checkout';
 import NotFound from './pages/NotFound';
 
 const router = createBrowserRouter([
@@ -36,10 +36,10 @@ const router = createBrowserRouter([
             //     path: '/buy',
             //     element: <Buy />
             // },
-            // {
-            //     path: '/checkout',
-            //     element: <Checkout />
-            // },
+            {
+                path: '/checkout',
+                element: <Checkout />
+            },
         ],
     },
 ]);
