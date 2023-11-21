@@ -7,7 +7,7 @@ import './Signup.css';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
   });
@@ -32,7 +32,8 @@ const Signup = () => {
       const { data } = await addProfile({
         variables: { ...formState },
       });
-
+      // James says to review the line below; addProfile might need to be removed...
+      // but also, where is token coming from? It's not in the User type definition.
       Auth.login(data.addProfile.token);
     } catch (e) {
       console.error(e);
@@ -55,7 +56,7 @@ const Signup = () => {
                 <input
                   className="form-input"
                   placeholder="Your username"
-                  name="name"
+                  name="username"
                   type="text"
                   value={formState.name}
                   onChange={handleChange}

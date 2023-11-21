@@ -13,13 +13,13 @@ const resolvers = {
 
       throw AuthenticationError;
     },
-      products: async () => {
-        return Product.find({})
-      },
-      users: async () => {
-        return await User.find({})
-      },
+    products: async () => {
+      return Product.find({})
     },
+    users: async () => {
+      return await User.find({})
+    },
+  },
 
   Mutation: {
     addUser: async (parent, args) => {
@@ -28,9 +28,11 @@ const resolvers = {
 
       return { token, user };
     },
-    login: async (parent, { email, password }) => {
+    loginUser: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-
+      // log what user is...
+      console.log('user is', user);
+      
       if (!user) {
         throw AuthenticationError;
       }
