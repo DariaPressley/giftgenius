@@ -12,10 +12,6 @@ const Header = () => {
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/about">About Us</BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
           <BreadcrumbLink as={Link} to="/ListGift">List My Gift</BreadcrumbLink>
         </BreadcrumbItem>
 

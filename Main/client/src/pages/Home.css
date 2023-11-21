@@ -1,0 +1,53 @@
+h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .about, .buttons, .presentDisplay {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  
+  .buttons {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-weight: bold; 
+    font-size: 1rem; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0; 
+    flex: 1; 
+  }
+  
+  
+  .btn-lg {
+    min-height: 50px; 
+    min-width: 150px; 
+  }
+  
+
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); 
+  }
+  
+ 
+  a {
+    text-decoration: none;
+  }
+  
+  
