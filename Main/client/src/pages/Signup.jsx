@@ -34,7 +34,7 @@ const Signup = () => {
       });
       // James says to review the line below; addProfile might need to be removed...
       // but also, where is token coming from? It's not in the User type definition.
-      Auth.login(data.addProfile.token);
+      Auth.login(data.token);
     } catch (e) {
       console.error(e);
     }
@@ -58,7 +58,7 @@ const Signup = () => {
                   placeholder="Your username"
                   name="username"
                   type="text"
-                  value={formState.name}
+                  value={formState.usernamename}
                   onChange={handleChange}
                 />
                 <input
