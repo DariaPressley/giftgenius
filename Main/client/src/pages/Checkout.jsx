@@ -1,6 +1,7 @@
 import Stripe from "react-stripe-checkout";
 import { useMutation } from "@apollo/client";
 import { PAYMENT } from "../utils/mutations"; 
+import './Checkout.css';
 
 const Checkout = () => {
     const [makePayment, {error}] = useMutation(PAYMENT); 
@@ -30,6 +31,7 @@ const Checkout = () => {
             <Stripe 
                 stripeKey= "pk_test_51OEbylLFoJobiVodNQ6xsVV6ljsIhM77mdECRhTewSgFgg6vowOeDaNkbeZ57U5AoDzRMcFKtsF7tOAUvbgdW8Aw00lAWII4A2"
                 token= {tokenHandler}
+                className="customStripeButton"
             />
         </div>
     );
