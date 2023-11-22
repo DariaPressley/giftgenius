@@ -63,7 +63,7 @@ const ListGift = () => {
           title: title,
           ownerEmail: ownerEmail,  
           description: description,
-          price: price,
+          price: parseInt(price),
           image: image},
       });
 
