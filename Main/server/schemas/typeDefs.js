@@ -1,20 +1,20 @@
 const typeDefs = `
   type Product {
-    _id: ID!
-    title: String!
-    description: String!
-    condition: String!
-    category: String!  
-    ownerEmail: String!
+    _id: ID
+    title: String
+    description: String
+    condition: String
+    category: String
+    ownerEmail: String
     price: Int
-    image: String!
+    image: String
   }
 
   type User {
-    _id: ID!
-    username: String!
-    email: String!
-    password: String!
+    _id: ID
+    username: String
+    email: String
+    password: String
   }
 
   type Query {
@@ -25,7 +25,7 @@ const typeDefs = `
 
   type Mutation {
     addProfile(username: String!, email: String!, password: String!): User
-    addProduct(name: String!, price: Int, occasion: String!): Product 
+    addProduct(title: String, description: String, condition: String, category: String, ownerEmail: String, price: Int, image: String): Product 
     addUser(username: String!, email: String!, password: String!): AuthPayload
     loginUser(email: String!, password: String!): AuthPayload
     removeProduct(productId: ID!): User

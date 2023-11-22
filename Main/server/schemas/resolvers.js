@@ -49,16 +49,18 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addProduct: async (parent, { productData }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { productData } },
-          { new: true }
-        );
+    addProduct: async (parent, args, context) => {
+      // if (context.user) {
+        // const updatedUser = await User.findByIdAndUpdate(
+        //   { _id: context.user._id },
+        //   { $push: { productData } },
+        //   { new: true }
+        // );
 
-        return updatedUser;
-      }
+        const productData = await Product.create (args)
+
+        return productData;
+      // }
 
       throw AuthenticationError;
     },
