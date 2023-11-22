@@ -41,17 +41,15 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
 
 export const CREATE_PRODUCT = gql`
 
-    mutation createProduct($name: String!, $occasion: String!, $price: Int) {
-    addProduct(name: $name, occasion: $occasion, price: $price) {
-      category
-      condition
-      description
-      ownerEmail
-      price
-      title
-      _id
-    }
-  } 
+mutation addProduct ($title: String, $description: String, $ownerEmail: String, $price: Int, $image: String) {
+  addProduct(title: $title, description: $description, ownerEmail: $ownerEmail, price: $price, image: $image) {
+    title
+    description
+    ownerEmail
+    price
+    image
+  }
+}
 `;
 
 export const PAYMENT = gql`

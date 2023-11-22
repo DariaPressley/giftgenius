@@ -8,10 +8,12 @@ import Products from './Products';
 
 
 const ListGift = () => {
-  const [itemName, setItemName] = useState('');
+  const [title, setItemName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
+  const [ownerEmail, setOwnerEmail] = useState('');
   const [image, setImage] = useState(null);
+  const [addProduct, {error}] = useMutation(CREATE_PRODUCT)
 
   const handleItemNameChange = (e) => {
     setItemName(e.target.value);
@@ -24,6 +26,11 @@ const ListGift = () => {
   const handlePriceChange = (e) => {
     setPrice(e.target.value);
   };
+
+  const handleOwnerEmailChange = (e) => {
+    setOwnerEmail(e.target.value);
+  };
+
 
   const handleImageChange = (e) => {
     e.preventDefault ();
@@ -47,24 +54,24 @@ const ListGift = () => {
   //send new product to database using the mutation - set three items to object and send object to database
  //upload button is running handle submit and reloading the page 
  
- const handleSubmit = (e) => {
+ const handleSubmit = async (e) => {
     e.preventDefault();
-    const newProduct = () => {
-      const { productId } = useParams();
-      const { loading, data } = useMutation(CREATE_PRODUCT, {
+    console.log ('i made it')
+    
+      const {data} = await addProduct ({
         variables: { 
-          profileId: profileId,  
+          title: title,
+          ownerEmail: ownerEmail,  
           description: description,
-          price: price,
+          price: parseInt(price),
           image: image},
       });
 
-    newProduct ();
     setItemName('');
     setDescription('');
     setPrice('');
     setImage(null);
-  };
+    setOwnerEmail ('');
   }
 
 
@@ -74,7 +81,7 @@ const ListGift = () => {
       <form onSubmit={handleSubmit}>
         <label>
           Gift Name:
-          <input type="text" value={itemName} onChange={handleItemNameChange} />
+          <input type="text" value={title} onChange={handleItemNameChange} />
         </label>
         <label>
           Description:
@@ -83,6 +90,10 @@ const ListGift = () => {
         <label>
           Price:
           <input type="text" value={price} onChange={handlePriceChange} />
+        </label>
+        <label>
+          Email:
+          <input type="text" value={ownerEmail} onChange={handleOwnerEmailChange} />
         </label>
         <label>
           Upload Image:
