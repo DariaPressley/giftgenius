@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import './ListGift.css'; 
 import { useContext } from 'react';
 import { CREATE_PRODUCT } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
+import Products from './Products';
+
 
 const ListGift = () => {
   const [itemName, setItemName] = useState('');
@@ -39,19 +43,29 @@ const ListGift = () => {
       }, false);
   };
 
-  const handleSubmit = (e) => {
+
+  //send new product to database using the mutation - set three items to object and send object to database
+ //upload button is running handle submit and reloading the page 
+ 
+ const handleSubmit = (e) => {
     e.preventDefault();
+    const newProduct = () => {
+      const { productId } = useParams();
+      const { loading, data } = useMutation(CREATE_PRODUCT, {
+        variables: { 
+          profileId: profileId,  
+          description: description,
+          price: price,
+          image: image},
+      });
 
-    //send new product to database using the mutation - set three items to object and send object to database
-    //upload button is running handle submit and reloading the page 
-
-
+    newProduct ();
     setItemName('');
     setDescription('');
     setPrice('');
     setImage(null);
   };
-
+  }
 
 
   return (
@@ -73,6 +87,7 @@ const ListGift = () => {
         <label>
           Upload Image:
           <button id="upload_widget" className="cloudinary-button" onClick= {handleImageChange}>Upload Gift</button>
+          <button className="submitButton" onClick= {handleSubmit}>Submit</button>
         </label>
       </form>
     </div>
