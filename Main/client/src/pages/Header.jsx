@@ -23,7 +23,7 @@ const Header = () => {
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/logout">logout</BreadcrumbLink>
+          <BreadcrumbLink as={Link} to="/Logout">logout</BreadcrumbLink>
         </BreadcrumbItem> 
       </Breadcrumb>
     </div>
